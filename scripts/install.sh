@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if ! [[ -d "PsychoStats" ]]
+then
+    git clone "https://github.com/Drek282/PsychoStats"
+fi
+
 MODS=' bg3 cod4 cod4x cstrike cstrikes dod dods firearms gungame hl2dm hldm natural soldat tf2 tfc'
 
 if ! [[ -d ".git" ]]
