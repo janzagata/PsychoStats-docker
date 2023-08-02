@@ -4,7 +4,7 @@ MODS=' bg3 cod4 cod4x cstrike cstrikes dod dods firearms gungame hl2dm hldm natu
 
 if ! [[ -d ".git" ]]
 then
-    echo "This script have to be run from root!"
+    echo "This script must be run from root directory!"
     exit 1
 fi
 
@@ -12,15 +12,16 @@ if [ $# -eq 0 ]
   then
     echo "Please specify mod you wish to install. i.e: ./scritps/install.sh cstrikes."
     echo "Options are: "
-    echo $MODS | sed 's/ /\n - /g'
+    echo -$MODS | sed 's/ /\n - /g'
     exit 1
 fi
 
-if echo $MODS | grep -w $1 > /dev/null; then
+if [ $(echo $MODS | grep -w $1 > /dev/null) ]
+ then
     echo "Please specify mod you wish to install. i.e: ./scritps/install.sh cstrikes."
     echo "Options are: "
-    echo $MODS | sed 's/ /\n - /g'
-    exit 1
+    echo - $MODS | sed 's/ /\n - /g'
+    exit 2
 fi
 
 
